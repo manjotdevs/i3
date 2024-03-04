@@ -1,0 +1,52 @@
+# i3blocks configuration file
+# by MANJOT SINGH
+
+# Global properties
+separator=true
+separator_block_width=22
+color=#00ffff
+markup=none
+
+[time]
+command='sb-clock'
+interval=1
+
+[wifi]
+command='sb-nettraf'
+interval=1
+
+[forecast]
+command='sb-forecast'
+interval=60
+
+[cpu]
+command='sb-cpu'
+interval=30
+
+[memory]
+command='sb-memory'
+interval=5
+
+[disk/root]
+command='sb-disk'
+interval=60
+
+[disk/home]
+command='sb-disk-home'
+interval=60
+
+[network]
+#command='sb-internet'
+#interval=1
+
+[volume]
+command='sb-volume'
+interval=1
+
+[battery]
+command='sb-battery'
+interval=1
+
+[power]
+full_text=   
+command='sysact'
