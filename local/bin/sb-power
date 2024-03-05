@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Define function to show options menu
+show_options() {
+  echo "<span button=\"1\" class=\"clickable\">Shutdown</span>"
+  echo "<span button=\"2\" class=\"clickable\">Restart</span>"
+  echo "<span button=\"3\" class=\"clickable\">Logout</span>"
+}
+
+# Define function to handle button clicks
+handle_click() {
+  case $1 in
+    1) i3-msg exit ;;
+    2) systemctl reboot ;;
+    3) i3-msg session terminate ;;
+    *) echo "Unknown option";;
+  esac
+}
+
+# Check if click event was sent
+if [ -n "$BLOCK_BUTTON" ]; then
+  handle_click "$BLOCK_BUTTON"
+else
+  show_options
+fi
+
